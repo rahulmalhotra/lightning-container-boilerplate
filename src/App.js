@@ -61,18 +61,14 @@ class App extends Component {
 
   callApexController(event) {
     event.preventDefault();
-    console.log('apex called');
     LCC.callApex(
       "LightningContainerBoilerplate.createNewContact",
       this.state.messageToSend,
       this.handleApexReturnValue,
       {escape: true});
-    console.log('apex called');
   }
 
   handleApexReturnValue(result, event) {
-    console.log('result'+result);
-    console.log('event'+event);
     var messageReceived;
     if(event.status) {
       messageReceived = {
@@ -123,22 +119,28 @@ class App extends Component {
             </div>
             </form>
             <div className="slds-grid slds-wrap">
-                <div className="slds-size_1-of-1 slds-text-heading_large">
-                  <br /><br />
-                  { this.state.messageReceived.type === 'success' && (
-                        <div> Success Message Received:- </div>
-                  )}
-                  { this.state.messageReceived.type === 'error' && (
-                        <div> Error Message Received:- </div>
-                  )}
-                  { this.state.messageReceived.type === 'apexsuccess' && (
-                        <div> Apex Success Message Received:- </div>
-                  )}
-                  { this.state.messageReceived.type === 'apexerror' && (
-                        <div> Apex Error Message Received:- </div>
-                  )}
-                 {this.state.messageReceived.value}
-                </div>
+              <div className="slds-size_1-of-2 slds-text-heading_large">
+              <br />
+                { this.state.messageReceived.type === 'success' && (
+                      <div> Success :- </div>
+                )}
+                { this.state.messageReceived.type === 'error' && (
+                      <div> Error :- </div>
+                )}
+                { this.state.messageReceived.type === 'apexsuccess' && (
+                      <div> Apex Success :- </div>
+                )}
+                { this.state.messageReceived.type === 'apexerror' && (
+                      <div> Apex Error :- </div>
+                )}
+                { this.state.messageReceived.type === 'default' && (
+                      <div> Default Message :- </div>
+                )}
+              </div>
+              <div className="slds-size_1-of-2 slds-text-heading_large">
+              <br />
+                   {this.state.messageReceived.value}
+              </div>
             </div>
           </div>
       </div>
