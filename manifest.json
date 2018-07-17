@@ -1,0 +1,9 @@
+{
+    "landing-pages" : [
+        {
+            "path": "index.html",
+            "content-security-policy-type": "low",
+            "apex-controller": "LightningContainerBoilerplate"
+        }
+    ]
+}
