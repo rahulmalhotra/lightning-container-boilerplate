@@ -1,0 +1,22 @@
+<aura:component controller="ContainerDemoCtrl" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="myMessage" type="String" default="Your Message will appear here"/>
+    <lightning:card title="Lightning Component">
+		<p class="slds-p-horizontal_small slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3 slds-text-heading_large">
+                {!v.myMessage}
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning:input label="Input Message" aura:id="inputMessage" />
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-align_absolute-center"><br />
+                <lightning:button label="Send Message" variant="brand" onclick="{!c.sendMessage}" />
+            </div>
+        </p>
+    </lightning:card>
+    <lightning:card title="JavaScript Application">
+		<p class="slds-p-horizontal_small">
+		<br />
+        <lightning:container class="containerClass" aura:id="jsContainer" src="{! $Resource.lightningcontainerboilerplate + '/index.html' }" onmessage="{!c.handleMessage}" onerror="{!c.handleError}" />
+        </p>
+    </lightning:card>
+</aura:component>
