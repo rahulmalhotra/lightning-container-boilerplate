@@ -1,4 +1,4 @@
-<aura:component controller="ContainerDemoCtrl" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
     <aura:attribute name="myMessage" type="String" default="Your Message will appear here"/>
     <lightning:card title="Lightning Component">
 		<p class="slds-p-horizontal_small slds-grid slds-wrap">
